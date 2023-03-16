@@ -205,7 +205,32 @@
                     can be stopped by passing true to the dismiss parameter.
                 </p>
             </div>
-          
+            <div class="my-12">
+                <h1 class="font-bold text-2xl my-8">How chooseQuiz function work?</h1>
+                <p class="text-base">
+                    This is the chooseQuiz function that is called when the user selects a quiz option.
+
+                    The function takes two arguments: index, which is the index of the current quiz question, and
+                    givenAns, which is the selected quiz option.
+
+                    The code first checks to see if the answer for the current quiz question is already saved. It does
+                    this by using the find method to find an object with an id property that matches the id property of
+                    the current quiz question in the answer field.
+
+                    If an answer is found, the code updates the givenAns property of the corresponding object in the
+                    answer field. It does this by using a for...of loop to iterate through the response array until it
+                    finds an object with a matching id property. Once it finds the object, it replaces it with a new
+                    object that has the same properties as the current quiz question object, but with an updated
+                    givenAns property.
+
+                    If the answer is not found, the code creates a new object that represents the current quiz question
+                    and its selected answer and adds it to the answer field using the push method.
+
+                    Finally, the displayAnswers function is called with the answer field as an argument to update the
+                    quiz answer display. Overall, this feature allows the user to select a quiz option and save their
+                    selection in the answer field.
+                </p>
+            </div>
         </section>
     </main>
 </body>
