@@ -46,7 +46,168 @@
     <!-- Header/Navbar section end -->
 
     <!-- Landing page content start -->
+    <main class="my-24">
+        <!-- question and answer section -->
+        <section class="w-11/12 mx-auto">
+            <div>
+                <h1 class="font-bold text-2xl">What is the difference between map, filter, forEach, find?</h1>
+                <div class="text-base">
+                    <p class="my-8">
+                        <span class="text-lg">.for each:</span>
+                        .forEach() is used to run the same code on each element in an array, but does not change the
+                        array
+                        and returns undefined.
 
+                        In the example below, we would use .forEach() to iterate through an array of foods and log that
+                        we
+                        would like to eat each one.
+                        <br>
+                        <br>
+                        <code>
+                            let food = ['mango','rice','pepper','pear'];
+                            food.forEach(function(foodItem){ console.log('I want to eat '+foodItem);
+                            });
+                            
+                        </code>
+                    </p>
+                    <p class="my-8">
+                        <span class="text-lg">.map():</span>
+                        .map() executes the same code on each element in the array and returns a new array with the
+                        updated
+                        elements.
+
+                        In the example below, we would use .map to iterate over the elements of the cost array and
+                        divide
+                        each element by 10, then assign our new array containing the new costs to the newCost variable.
+                        <br>
+                        <br>
+                        <code>
+                        let price = [100,400,300,700];
+                        let newCost = cost.map(function(costItem){ return costItem / 10;
+                        });
+                        console.log(newCost);
+                    </code>
+                    </p>
+                    <p class="my-8">
+                        <span class="text-lg">.filter():</span>
+
+                        .filter() checks each element in the array to see if it meets certain criteria and returns a new
+                        array with elements that return true for the criteria.
+
+                        In the example below, we would use .filter to return values ​​that are less than 200.
+
+                        <br>
+                        <br>
+                        <code>
+                    let cost = [100,400,50,40,700];
+                    let smallCost = cost.filter(function(costItem){ return costItem < 200
+                    });
+                    console.log(smallCost);
+                    </code>
+                    </p>
+                    <p class="my-8">
+
+                        <span class="text-lg"> .find():</span>
+                        .find() Returns the first element of an array that meets a certain condition specified by
+                        the function. If no element meets the condition, undefined is returned.
+                        In the example below
+                        <br>
+                        <br>
+                        <code>
+                             const foundElement = oldArray.find((element) => element === 5);
+                         </code>
+                    </p>
+                </div>
+            </div>
+            <div class="my-12">
+                <h1 class="font-bold text-2xl my-8">what is the difference between localStorage ,sessionstorage session
+                    and
+                    cookies?</h1>
+                <div>
+                    <p class="text-base">
+                    <h3 class="text-lg">Local storage:</h3>
+                    Local storage stores large amounts of data on the client computer in key-value format and has no
+                    expiration date. The data is never transmitted to the server and is accessible via JavaScript and
+                    HTML5.
+                    <li>Capacity: 10 MB</li>
+                    <li>Accessible from: From any window</li>
+                    <li>Expiration: Never</li>
+                    <li>Repository Location: Browser only</li>
+                    <li> Sent with requirements: No</li>
+                    <li>Blockable by users: Yes</li>
+                    <li> User Editable: Yes</li>
+                    </p>
+                </div>
+                <div class="my-6">
+                    <p class="text-base">
+                    <h3 class="text-lg">Session storage:</h3>
+                    Session storage stores a large amount of data on the client's computer for the current session only,
+                    with the data expiring when the tab is closed. The data is never transferred to the server and is
+                    accessible on the client side from the same tab.
+                    <li>Capacity: 5 MB</li>
+                    <li>Available from: Same card</li>
+                    <li>Expiration: When the card is closed</li>
+                    <li>Repository Location: Browser only</li>
+                    <li>Sent with requirements: No</li>
+                    <li>Blockable by users: Yes</li>
+                    <li> User Editable: Yes</li>
+                    </p>
+                </div>
+                <div class="my-6">
+                    <p class="text-base">
+                    <h3 class="text-lg">Cookies:</h3>
+                    Cookies store a small amount of data that must be sent back to the server with subsequent requests,
+                    and their expiration can be set from the server or the client. They are primarily used for
+                    server-side reading.
+                    <li>Capacity: 4KB</li>
+                    <li>Available from: From any window</li>
+                    <li>Expiration: Manually set</li>
+                    <li>Repository Location: Browser and Server</li>
+                    <li>Sent with requirements: Yes</li>
+                    <li>Blockable by users: Yes</li>
+                    <li> User Editable: Yes</li>
+                    </p>
+                </div>
+
+            </div>
+            <div class="my-12">
+                <h1 class="font-bold text-2xl my-8">What is Event Loop?</h1>
+                <p class="text-base">
+                    The event loop is the secret to asynchronous JavaScript programming. JS performs all operations on a
+                    single thread, but gives us the illusion of multithreading by using several smart data structures.
+                    Let's take a look at what's happening on the back-end.
+
+                    The call stack is responsible for keeping track of all operations in the queue to be performed.
+                    Whenever a function completes, it is removed from the stack.
+
+                    The event queue is responsible for sending new functions to the stack for processing. It follows the
+                    queue data structure to maintain the correct order in which all operations should be submitted for
+                    execution.
+
+                    <br>
+                    <br>
+                    An example of this is the setTimeout method. When a setTimeout operation is processed on the stack,
+                    it is sent to the corresponding API, which waits until the specified time to send the operation back
+                    for processing.
+                </p>
+            </div>
+            <div class="my-12">
+                <h1 class="font-bold text-2xl my-8">How quizTimer function work?</h1>
+                <p class="text-base">
+                    This is the quizTimer function that sets the timer for the quiz. The function takes one argument
+                    called dismiss which is used to stop the timer. If dismiss is true, then the clearInterval function
+                    is called to stop the timer and the function returns. If the statement is incorrect, the timer
+                    continues. Within the setInterval function, the code updates the HTML element by the id count to
+                    display the current time in minutes and seconds. It does this by calculating the number of minutes
+                    and seconds based on the count value, which is initially set to 0. The code also updates the element
+                    class to toggle between text-red-300 and text-red-700 every other second if the timer has been
+                    running longer than 60 seconds. Overall, this function can be used to display a timer for a quiz and
+                    can be stopped by passing true to the dismiss parameter.
+                </p>
+            </div>
+          
+        </section>
+    </main>
 </body>
 
 </html>
